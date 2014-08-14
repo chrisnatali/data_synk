@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Survey</title>
+    <link rel="stylesheet" href="survey.css" type="text/css" />
+    <script src="HTTP.js" type="text/javascript"></script>
+    <script src="Common.js" type="text/javascript"></script>
+    <script src="Parser.js" type="text/javascript"></script>
+    <script src="DataMgr.js" type="text/javascript"></script>
+    <script src="Controller.js" type="text/javascript"></script>
+    <script src="Forms.js" type="text/javascript"></script>
+    <script src="Domain.js" type="text/javascript"></script>
+    <script src="VotePageFunctions.js" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  </head>
+  <!-- todo:  let GWT figure out how to register keydown events -->
+  <body onload="load();">
+    <div id="outer">
+      <div id="header">
+       <h1>Survey Site</h1>
+      </div>
+
+      <div id="horizontal_nav">
+        <ul>
+          <li>
+            <a class="nav_link" href="./survey_manage.html">Manage</a>
+          </li>
+          <li>
+            <a class="nav_link" href="./survey_vote.html">Vote</a>
+          </li>
+          <li>
+            <a class="nav_link" href="./survey_report.html">Report</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="status_section" style="height:25px;"></div>
+        <div id="input_section" style="height:300px;"></div>
+        <div id="output_section" style="height:120px;"></div>
+        <div id="msg_section" style="height:200px;"></div>
+      </div>
+      <!-- end of main content -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+@CHARSET "ISO-8859-1";
+body {
+  font-family: Courier, helvetica, sans-serif;
+}
+
+h1 {
+        font-family: Arial;
+        font-size: 17px;
+}
+
+h2 {
+        font-family: Arial;
+        font-size: 14px;
+        color: #555555;
+        margin: 3px;
+}
+
+#header{
+        border-bottom: 1px solid #CCCCCC;
+        width: 100%;
+}
+
+#outer {
+        width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+}
+
+#main {
+}
+
+#status_section {
+        margin: 5px;
+        padding: 8px;
+        position: relative;
+}
+
+#entity_section {
+        margin: 8 px;
+        padding: 8px;
+        position: relative;
+}
+
+#input_section {
+        margin: 5px;
+        padding: 5px;
+        position: relative;
+        border: 1px solid #CCCCCC;
+        overflow: auto;
+}
+
+#output_section {
+        margin: 5px;
+        position: relative;
+        border: 1px solid #CCCCCC;
+        overflow: auto;
+}
+
+#msg_section {
+        margin: 5px;
+        padding: 5px;
+        position: relative;
+        overflow: auto;
+}
+
+
+#horizontal_nav {
+        height: 30px;
+        width: 100%;
+        border-top: solid #AAAAAA 1px;
+        border-bottom: solid #AAAAAA 1px;
+        /* background-color: #669933; */
+        border-spacing: 0px;
+}
+
+#horizontal_nav ul {
+        margin: 0px;
+        padding: 0px;
+        line-height: 30px;
+        white-space: nowrap;
+}
+
+#horizontal_nav li {
+        list-style-type: none;
+        display: inline;
+        padding: 7px 10px;
+}
+
+
+input.invalid {
+    border-style: solid;
+    border-color: #ff5555;
+}
+
+td.report {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+tr.report {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.nav_link {
+        font-family: Arial;
+        font-weight: bold;
+        color: #333333;
+        text-decoration: none;
+}
+
+.record {
+        cursor: pointer;
+        border-bottom: 1px solid #CCCCCC;
+}
+
+.selected_record {
+        cursor: pointer;
+        background: #DDDDDD;
+}
+
