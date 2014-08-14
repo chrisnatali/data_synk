@@ -141,6 +141,7 @@ JavaScript application to:
 - Perform local updates, flushing to server in a 'disconnected' way
 
 JavaScript:
+
 1. Include HTTP.js (from David Flanagan) Common.js, Parser.js,
 DataMgr.js, Controller.js, Forms.js, Domain.js in any web-page from
 which you want to manage data.
@@ -154,6 +155,7 @@ via Controller.flush();
 See:  survey_vote.html and VotePageFunctions.js for sample
 
 Perl (Server):
+
 1.  Include Controller.pm in any Perl cgi script from which you want
 to manage data.
 2.  Set the 'heap file' via ds_set_heap_file (where data is stored)
