@@ -141,14 +141,14 @@ JavaScript application to:
 - Perform local updates, flushing to server in a 'disconnected' way
 
 JavaScript:
-1.  Include HTTP.js (from David Flanagan) Common.js, Parser.js,
+1. Include HTTP.js (from David Flanagan) Common.js, Parser.js,
 DataMgr.js, Controller.js, Forms.js, Domain.js in any web-page from
 which you want to manage data.
-2.  Set the server-side cgi URL via Controller.remote_url = url;
-3.  Retrieve remote data via Controller.remote_sync_query(query);
-4.  Retrieve local data via Controller.local_query(query);
-5.  Update local data via Controller.local_update(recordset);
-5.  Submit any local data to server for more permanent/shared storage
+2. Set the server-side cgi URL via Controller.remote_url = url;
+3. Retrieve remote data via Controller.remote_sync_query(query);
+4. Retrieve local data via Controller.local_query(query);
+5. Update local data via Controller.local_update(recordset);
+5. Submit any local data to server for more permanent/shared storage
 via Controller.flush();
 
 See:  survey_vote.html and VotePageFunctions.js for sample
