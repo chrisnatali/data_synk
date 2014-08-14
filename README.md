@@ -174,6 +174,7 @@ Voting
 Reporting
 
 'Brief Test' Instructions:
+
 1.  Navigate to http://cs.nyu.edu/~cjn212/survey_vote.html
 2.  Login as 'Chris'
 3.  Select a User whose Surveys you wish to complete
@@ -181,6 +182,7 @@ Reporting
 5.  Click the 'Report' link and find a Survey to report on.
 
 'Full Test' Instructions:
+
 1.  Navigate to http://cs.nyu.edu/~cjn212/survey_manage.html
 2.  Add a User and Update Survey/Question/Answer information
 3.  Goto step 2 above, replacing 'Chris' with your User (Note that to
@@ -193,6 +195,7 @@ Installation:
 'typical' Unix/Apache/Perl/CGI environment.
 
 To run the sample application via apache and cgi module
+
 1.  Clone this repo under your user's public_html dir
 2.  Configure apache to allow perl cgi scripts under user's public_html dir
     YMMV, but for me, this was sufficient:
