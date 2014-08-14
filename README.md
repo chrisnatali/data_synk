@@ -1,19 +1,6 @@
 DataSynk Framework
 ==================
 
-Contents:
-----------------------------------------------------------------------
-
-  Description
-  Components
-  Record Format/Semantics
-  Query Format/Semantics
-  Domain Format/Semantics
-  Usage
-  Sample Application
-  Installation
-  Todo
-
 Description:
 ----------------------------------------------------------------------
 Framework for managing data between JavaScript client and Perl CGI.
@@ -44,36 +31,42 @@ Record Format/Semantics
 ----------------------------------------------------------------------
 
 The framework uses a 'canonical' record format roughly defined as:
-record:  field_values '\n'
-field_values: field=value [',' field_values]
+
+    record:  field_values '\n'
+    field_values: field=value [',' field_values]
 
 All records will have the following fields
-_&id:  The unique id for this record
-_entity: The name of the entity this record is associated with
+
+    _&id:  The unique id for this record
+    _entity: The name of the entity this record is associated with
 
 The server maintains the following
-_sync_id: id or version of dataset that this record is associated with
+
+    _sync_id: id or version of dataset that this record is associated with
 
 The client maintains
-_dirty: whether this record needs to be flushed to server
+
+    _dirty: whether this record needs to be flushed to server
 
 Fields that begin with '&' represent relationships to other
 entity/records
 
 Sample Records:
-_&id=1,_entity=User,Name=sam
-_&id=2,_entity=User,Name=ralph
-_&id=3,_entity=Survey,Name=s1,&User=1
-_&id=4,_entity=Survey,Name=s2,&User=2
-_&id=5,_entity=Question,Question=Home,&Survey=3
-_&id=6,_entity=Question,Question=Away,&Survey=4
+
+    _&id=1,_entity=User,Name=sam
+    _&id=2,_entity=User,Name=ralph
+    _&id=3,_entity=Survey,Name=s1,&User=1
+    _&id=4,_entity=Survey,Name=s2,&User=2
+    _&id=5,_entity=Question,Question=Home,&Survey=3
+    _&id=6,_entity=Question,Question=Away,&Survey=4
 
 Query Format/Semantics
 ----------------------------------------------------------------------
 
 The framework uses the following query format to retrieve data:
-query: criterion
-criterion: field=value [',' criterion]
+
+    query: criterion
+    criterion: field=value [',' criterion]
 
 The criterion are 'AND'd to narrow the results.
 The following fields have special meaning:
@@ -81,6 +74,7 @@ The following fields have special meaning:
 _entity:  This field is required.  It specifies the entities to
 search.  Entities can be specified as a single entity or a hierarchy
 of entities.  A hierarchy can be expressed using:
+
   '*':  All entities at 'current' level
   '**':  All entities from current level and below
   '*[0-9]': All entities from current level to specific depth
@@ -91,11 +85,12 @@ searched, other fields must explicitly identify the entity they apply
 to.
 
 Sample Queries (and id's of returned records from Sample Records):
-_entity=User (returns 1, 2 from above)
-_entity=User/* (returns 1, 2, 3, 4)
-_entity=** (returns 1, 2, 3, 4, 5, 6)
-_entity=**,Survey.Name=s1 (returns 1, 2, 3, 5)
-_entity=Question,Question=Away (returns 6)
+
+    _entity=User (returns 1, 2 from above)
+    _entity=User/* (returns 1, 2, 3, 4)
+    _entity=** (returns 1, 2, 3, 4, 5, 6)
+    _entity=**,Survey.Name=s1 (returns 1, 2, 3, 5)
+    _entity=Question,Question=Away (returns 6)
 
 Domain Format/Semantics
 ----------------------------------------------------------------------
@@ -123,11 +118,12 @@ displayed as a 'radio' list.
 
 
 Sample Domain Definitions:
-_entity=User,-Name=^\\w{1\\,8}$
-_entity=Survey,-Name=^\\w{1\\,16}$,-&User=Name
-_entity=Question,-Question=^[\\w\\?\\s']{1\\,32}$,-&Survey=Name
-_entity=Answer,-Answer=^[\\w\\s']{1\\,16}$,-&Question=Question
-_entity=Vote,-#Answer=:Answer,-&Question=Question,-&User=Name
+
+    _entity=User,-Name=^\\w{1\\,8}$
+    _entity=Survey,-Name=^\\w{1\\,16}$,-&User=Name
+    _entity=Question,-Question=^[\\w\\?\\s']{1\\,32}$,-&Survey=Name
+    _entity=Answer,-Answer=^[\\w\\s']{1\\,16}$,-&Question=Question
+    _entity=Vote,-#Answer=:Answer,-&Question=Question,-&User=Name
 
 A Vote record, as defined above, has a Question and User parent
 relationship.  It also has a pseudo-relationship with Answer which is
