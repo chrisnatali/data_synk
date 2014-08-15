@@ -96,10 +96,12 @@ Domain Format/Semantics
 ----------------------------------------------------------------------
 
 The framework uses the following domain format to describe data:
-record:  field_values '\n'
-field_values: field=value [',' field_values]
+
+    record:  field_values '\n'
+    field_values: field=value [',' field_values]
 
 The following semantics apply:
+
 _entity field:  Required and names the entity
 
 Uniqueness: Fields that begin with '-' are part of the uniqueness
