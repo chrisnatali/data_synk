@@ -1,7 +1,7 @@
 DataSynk Framework
 ==================
 
-Description:
+Description
 ----------------------------------------------------------------------
 Framework for managing data between JavaScript client and Perl CGI.
 
@@ -11,7 +11,7 @@ For managing simple/small datasets for/via web applications.
 See Also:
 contents.txt for listing of directories/files.
 
-Components:
+Components
 ----------------------------------------------------------------------
 The following components have both JavaScript and Perl
 implementations.
@@ -131,7 +131,7 @@ displayed as a radio list.  The Answer, Question and User fields combined make a
 Vote unique (i.e. a User canNOT vote for the same answer for the same
 question twice).
 
-Usage:
+Usage
 ----------------------------------------------------------------------
 
 The intended use of this framework is to allow a browser-side
@@ -162,7 +162,7 @@ to manage data.
 3.  Call ds_handle_message to handle client requests/generate
 responses
 
-Sample Application:
+Sample Application
 ----------------------------------------------------------------------
 
 The Survey application demonstrates the utility of the DataSynk
@@ -188,10 +188,10 @@ Reporting
 3.  Goto step 2 above, replacing 'Chris' with your User (Note that to
 logout of the 'Vote' page, do a browser Refresh).
 
-Installation:
+Installation
 ----------------------------------------------------------------------
 
-**MAJOR** Assumptions:  This installation assumes a 'working' &
+Assumptions:  This installation assumes a 'working' &
 'typical' Unix/Apache/Perl/CGI environment.
 
 To run the sample application via apache and cgi module
@@ -216,7 +216,7 @@ To run the sample application via apache and cgi module
 
 For custom applications, see 'Usage' above.
 
-Todo:
+Todo
 ----------------------------------------------------------------------
 
 - Refactor code (particularly Forms.js, Domain.js) to eliminate
