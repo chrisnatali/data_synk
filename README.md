@@ -197,16 +197,16 @@ Assumptions:  This installation assumes a 'working' &
 To run the sample application via apache and cgi module
 
 1.  Clone this repo under your user's public_html dir
+
 2.  Configure apache to allow perl cgi scripts under user's public_html dir
   
     YMMV, but for me, this was sufficient:
-
     - enable cgi scripts under user public_html dir by adding the following to conf/extra/httpd-userdir.conf
 
-    <Directory /home/*/public_html> 
+    `<Directory /home/*/public_html> 
         Options +ExecCGI 
         AddHandler cgi-script .cgi 
-    </Directory>
+    </Directory>`
 
     - enable the cgi_module in httpd.conf
 
