@@ -198,20 +198,14 @@ To run the sample application via apache and cgi module
 
 1.  Clone this repo under your user's public_html dir
 
-2.  Configure apache to allow perl cgi scripts under user's public_html dir
-  
-    YMMV, but for me, this was sufficient:
-    - enable cgi scripts under user public_html dir by adding the following to conf/extra/httpd-userdir.conf
+2.  Configure apache to allow perl cgi scripts under user's public_html dir (YMMV, more info available here:  http://httpd.apache.org/docs/2.2/howto/cgi.html#configuring)
+      * enable cgi scripts under user public_html dir by adding the following to conf/extra/httpd-userdir.conf
 
-    `<Directory /home/*/public_html> 
-        Options +ExecCGI 
-        AddHandler cgi-script .cgi 
-    </Directory>`
-
-    - enable the cgi_module in httpd.conf
-
-    More info available here:  http://httpd.apache.org/docs/2.2/howto/cgi.html#configuring
-
+      `<Directory /home/*/public_html> 
+          Options +ExecCGI 
+          AddHandler cgi-script .cgi 
+      </Directory>`
+      * enable the cgi_module in httpd.conf
 3.  Browse to `http://<server>/~<user>/survey_manage.html`
 
 For custom applications, see 'Usage' above.
